@@ -27,7 +27,7 @@ function App() {
 
       {open && (
         <div className="modal" role="dialog">
-          <div className="modal-content-wrapper" onClick={closeModal}>
+          <div className="modal-content-wrapper">
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               {`Running side effects with reactions Reactions are an important concept to understand, as
             it is where everything in MobX comes together. The goal of reactions is to model side
@@ -40,16 +40,18 @@ function App() {
             Beyond that, there are also reaction and when. The autorun function accepts one function
             that should run every time anything it observes changes. It also runs once when you
             create the autorun itself.`.repeat(count)}
+
+              <div className="modal-icon-wrapper">
+                <img
+                  className="modal-close-icon"
+                  src={icon}
+                  alt="close"
+                  onClick={closeModal}
+                  role="button"
+                />
+              </div>
             </div>
           </div>
-
-          <img
-            className="modal-close-icon"
-            src={icon}
-            alt="close"
-            onClick={closeModal}
-            role="button"
-          />
         </div>
       )}
     </>
